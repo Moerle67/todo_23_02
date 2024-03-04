@@ -5,7 +5,9 @@ from .models import *
 
 def home(request):
     liste = Eintrag.objects.filter(done=False)
+    user = "Moerli"
     content = {
-        'liste': liste
+        'liste': liste,
+        'user': user,
     }
     return render(request, "todoapp/todo_list.html", content)
